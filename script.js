@@ -14,16 +14,18 @@ document.body.appendChild(container);
 // populate grid and append to container
 
 function populateGrid(size = 16){
-    let boxSize = 30 / size;
+    container.innerHTML = '';
+    let boxSize = 960 / size
 
 for (let i = 0; i < size**2; i++){
     const newBox = document.createElement('div');
     newBox.classList.add('box');
     newBox.id = i
-    newBox.style.width = `${boxSize}vw`;
-    newBox.style.height = `${boxSize}vw`;
+    newBox.style.width = `${boxSize}px`;
+    newBox.style.height = `${boxSize}px`;
     container.appendChild(newBox);
     }
 }
 
 populateGrid()
+
