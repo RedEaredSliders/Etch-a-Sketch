@@ -4,4 +4,24 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 10px;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    width: 30vw;
+    border: 1px solid black;
+    min-height: 60vh;
+   
+    
+}
+
+.box {
+    border: 1px solid black;
+    box-sizing: border-box;
+    
+    
+}
+
