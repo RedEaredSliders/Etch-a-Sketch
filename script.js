@@ -27,5 +27,40 @@ for (let i = 0; i < size**2; i++){
     }
 }
 
-populateGrid()
 
+
+
+
+// allow user to enter a value for new grid size
+function setGridSize(){
+    let newGridSize = 0;
+    
+    while (newGridSize < 2 || newGridSize > 100){
+        newGridSize = prompt('Please enter the desired grid size (value must be between 2 and 100)');
+    }
+    newGridSize = parseInt(newGridSize);
+    return newGridSize;
+    
+}
+
+// box changes color when hovered over
+function setBoxListeners(){
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach((box) => {
+        box.addEventListener('mouseenter', () => {
+            box.style.backgroundColor = 'aqua';
+    })
+})
+
+}
+
+
+
+// add listener to new grid button
+newGrid.addEventListener('click', () =>{
+    populateGrid(setGridSize())
+    setBoxListeners()
+})
+
+populateGrid()
+setBoxListeners()

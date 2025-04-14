@@ -12,6 +12,7 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     width: 960px;
     height: 960px;
@@ -31,7 +32,12 @@ body {
     
 }
 
+
+
 button {
     padding: 10px;
     
 }
+
+
+
