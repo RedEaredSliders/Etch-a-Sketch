@@ -97,7 +97,9 @@ function eraser(event){
 let mouseDown = false;
 
 
-
+window.addEventListener('mouseup', () => {
+    mouseDown = false;
+})
 
 
 populateGrid()
