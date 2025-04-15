@@ -47,8 +47,13 @@ function setGridSize(){
 function setBoxListeners(){
     const boxes = document.querySelectorAll('.box');
     boxes.forEach((box) => {
+        box.style.opacity = 0;
         box.addEventListener('mouseenter', () => {
-            box.style.backgroundColor = 'aqua';
+            let opacity = parseFloat(box.style.opacity)
+            box.style.backgroundColor = `rgb(${randRGBVal()}, ${randRGBVal()}, ${randRGBVal()})`;
+            if (opacity < 1){
+                box.style.opacity = (opacity + 0.1).toFixed(1);
+            }
     })
 })
 
@@ -58,9 +63,16 @@ function setBoxListeners(){
 
 // add listener to new grid button
 newGrid.addEventListener('click', () =>{
-    populateGrid(setGridSize())
-    setBoxListeners()
+    populateGrid(setGridSize());
+    setBoxListeners();
 })
+
+
+// generate a random RGB value
+function randRGBVal(){
+    let color = Math.random() * 256;
+    return color;
+}
 
 populateGrid()
 setBoxListeners()
