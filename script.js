@@ -55,6 +55,20 @@ function setBoxListeners(){
                 box.style.opacity = (opacity + 0.1).toFixed(1);
             }
     })
+        box.addEventListener('mousedown', (event) => {
+            mouseDown = true;
+            eraser(event);
+        });
+
+        box.addEventListener('mouseup', () => {
+            mouseDown = false;
+        });
+
+        box.addEventListener('mousemove', (event) => {
+            if (mouseDown){
+                eraser(event);
+            }
+        });
 })
 
 }
@@ -73,6 +87,18 @@ function randRGBVal(){
     let color = Math.random() * 256;
     return color;
 }
+
+// erasing function
+function eraser(event){
+    event.target.style.opacity = 0;
+    
+}
+
+let mouseDown = false;
+
+
+
+
 
 populateGrid()
 setBoxListeners()
